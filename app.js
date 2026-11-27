@@ -102,6 +102,7 @@ function tarjeta(e) {
     crear("h3", { text: e.nombre }),
     crear("p", { class: "tag", text: e.rubro }),
     crear("p", { text: e.descripcion }),
+    e.aviso ? crear("p", { class: "aviso", text: e.aviso }) : null,
     acciones,
   );
   return crear("li", { "data-rubro": e.rubro }, card);

@@ -17,7 +17,8 @@ const CONFIG = {
 // Cada emprendimiento:
 //   nombre, rubro, descripcion (corta), imagen (archivo en /img),
 //   instagram (usuario sin @, o ""), whatsapp (mismo formato que arriba, o ""),
-//   web (opcional, dirección completa con https://)
+//   web (opcional, dirección completa con https://),
+//   aviso (opcional, texto corto destacado, por ejemplo "Venta solo a mayores de 18 años.")
 const EMPRENDIMIENTOS = [
   {
     nombre: "Bling Bling Shakur",
@@ -69,6 +70,7 @@ const EMPRENDIMIENTOS = [
     descripcion:
       "Vinos de buen sabor. Envíos en CABA o retiro en persona; pago por transferencia.",
     imagen: "img/nativo-copas.webp",
+    aviso: "Venta solo a mayores de 18 años.",
     instagram: "nativo_copas",
     whatsapp: "",
   },

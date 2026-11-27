@@ -216,7 +216,7 @@ a { color: inherit; }
   margin: 0; font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
   color: var(--highlight);
 }
-.card > p:not(.tag) { margin: 0; color: var(--text-soft); flex-grow: 1; }
+.card > p:not(.tag, .aviso) { margin: 0; color: var(--text-soft); flex-grow: 1; }
 .card footer { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-top: .4rem; width: 100%; }
 .contact {
   flex: 1 1 8rem; display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
@@ -303,3 +303,7 @@ a { color: inherit; }
 .site-footer p { margin: .3rem 0; color: var(--text-soft); }
 
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.aviso {
+  margin: 0; padding: .35rem .75rem; border-radius: .6rem; font-size: .85rem; font-weight: 700;
+  color: var(--text); background: var(--bg-alt); border: 1px solid var(--border);
+}
