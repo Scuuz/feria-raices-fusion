@@ -27,7 +27,7 @@ const EMPRENDIMIENTOS = [
       "Joyería dental en zona Oeste. Cristales Swarovski®, Preciosa® y oro 18k, en versión semipermanente y temporal.",
     imagen: "img/bling-bling-shakur.webp",
     instagram: "bling_bling_shakur",
-    whatsapp: "",
+    whatsapp: "5491125141478",
   },
   {
     nombre: "Aromas con Historia",
