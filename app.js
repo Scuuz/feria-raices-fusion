@@ -1,11 +1,24 @@
-const ICONOS = {
-  whatsapp:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.2-.3Z"/></svg>',
-  instagram:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2ZM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0Zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z"/></svg>',
-  web:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8ZM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4ZM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3Zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16Zm3-8h-3a8 8 0 0 1 4.3-3.6C8.9 5.5 8.4 6.7 8.1 8ZM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4Zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4Zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6Zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4Z"/></svg>',
-};
+// Validaciones: si un dato de datos.js tiene un formato inesperado, no se muestra
+const ES_WHATSAPP = /^\d{10,15}$/;
+const ES_INSTAGRAM = /^[A-Za-z0-9._]{1,30}$/;
+function urlSegura(texto) {
+  try {
+    const url = new URL(texto);
+    return url.protocol === "https:" ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+function icono(nombre) {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("aria-hidden", "true");
+  const use = document.createElementNS(ns, "use");
+  use.setAttribute("href", `#i-${nombre}`);
+  svg.append(use);
+  return svg;
+}
 
 const RUBROS_FORMULARIO = [
   "Belleza",
@@ -39,11 +52,10 @@ function botonContacto(href, tipo, texto, etiqueta) {
     class: `contact${tipo === "whatsapp" ? " contact--wa" : ""}`,
     href,
     target: "_blank",
-    rel: "noopener",
+    rel: "noopener noreferrer",
     "aria-label": etiqueta,
   });
-  a.insertAdjacentHTML("afterbegin", ICONOS[tipo]);
-  a.append(crear("span", { text: texto }));
+  a.append(icono(tipo), crear("span", { text: texto }));
   return a;
 }
 
@@ -57,7 +69,7 @@ function iniciales(nombre) {
 }
 
 function tarjeta(e) {
-  const media = e.imagen
+  const media = /^img\/[a-z0-9-]+\.(webp|png|jpe?g)$/.test(e.imagen ?? "")
     ? crear("img", {
         src: e.imagen,
         alt: `Logo de ${e.nombre}`,
@@ -69,17 +81,18 @@ function tarjeta(e) {
     : crear("div", { class: "avatar", "aria-hidden": "true", text: iniciales(e.nombre) });
 
   const acciones = crear("footer");
-  if (e.whatsapp) {
+  if (ES_WHATSAPP.test(e.whatsapp ?? "")) {
     const url = `https://wa.me/${e.whatsapp}?text=${encodeURIComponent(MENSAJE_CLIENTE)}`;
     acciones.append(botonContacto(url, "whatsapp", "WhatsApp", `Escribir a ${e.nombre} por WhatsApp`));
   }
-  if (e.instagram) {
+  if (ES_INSTAGRAM.test(e.instagram ?? "")) {
     acciones.append(
       botonContacto(`https://www.instagram.com/${e.instagram}/`, "instagram", "Instagram", `Ver el Instagram de ${e.nombre}`),
     );
   }
-  if (e.web) {
-    acciones.append(botonContacto(e.web, "web", "Tienda online", `Ver la tienda online de ${e.nombre}`));
+  const web = e.web ? urlSegura(e.web) : null;
+  if (web) {
+    acciones.append(botonContacto(web, "web", "Tienda online", `Ver la tienda online de ${e.nombre}`));
   }
 
   const card = crear(
@@ -163,10 +176,14 @@ function prepararFormulario() {
     ev.preventDefault();
     const invalidos = campos.filter((el) => !validar(el));
     if (invalidos.length) {
-      estado.textContent = "Revisá los campos marcados: faltan datos obligatorios.";
+      estado.textContent = "Revisá los campos marcados: falta completar o corregir un dato.";
       invalidos[0].focus();
       return;
     }
+
+    const boton = form.querySelector('button[type="submit"]');
+    boton.disabled = true;
+    setTimeout(() => (boton.disabled = false), 3000);
 
     const d = Object.fromEntries(new FormData(form));
     const ig = d.instagram.trim().replace(/^@/, "");
@@ -183,8 +200,8 @@ function prepararFormulario() {
       .filter((l) => l !== null)
       .join("\n");
 
-    if (CONFIG.whatsapp) {
-      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensaje)}`, "_blank", "noopener");
+    if (ES_WHATSAPP.test(CONFIG.whatsapp)) {
+      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensaje)}`, "_blank", "noopener,noreferrer");
       estado.textContent = "¡Listo! Se abrió WhatsApp con tus datos: solo tocá Enviar.";
       return;
     }
@@ -195,7 +212,7 @@ function prepararFormulario() {
       await navigator.clipboard.writeText(mensaje);
       copiado = true;
     } catch {}
-    window.open(`https://ig.me/m/${CONFIG.instagram}`, "_blank", "noopener");
+    window.open(`https://ig.me/m/${CONFIG.instagram}`, "_blank", "noopener,noreferrer");
     estado.textContent = copiado
       ? `Copiamos tu mensaje. Pegalo en el chat de Instagram de @${CONFIG.instagram} y envialo.`
       : `Escribinos por Instagram a @${CONFIG.instagram} con estos datos.`;
