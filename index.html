@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Raíces Fusión · Feria de emprendedores online</title>
+  <meta name="description" content="Feria de emprendedores online de Raíces Fusión. Conocé los emprendimientos por rubro y contactalos directo por WhatsApp o Instagram.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raíces Fusión · Feria de emprendedores online">
+  <meta property="og:description" content="Un espacio para mostrar, vender y conectar. Conocé los emprendimientos y contactalos directo.">
+  <meta property="og:image" content="https://scuuz.github.io/feria-raices-fusion/img/raices-fusion.webp">
+  <meta name="theme-color" content="#f3ede2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1f1813" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="datos.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#feria">Saltar a los emprendimientos</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio">
+        <img src="img/raices-fusion.webp" alt="" width="40" height="38">
+        <span>Raíces Fusión</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="#feria">Emprendimientos</a></li>
+          <li><a href="#como-funciona">Cómo funciona</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+        </ul>
+      </nav>
+      <a class="button button--primary button--small" href="#inscripcion">Inscribirme</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-logo" src="img/raices-fusion.webp" alt="Logo de Raíces Fusión: un árbol con sus raíces" width="265" height="252" fetchpriority="high">
+      <p class="badge"><span class="dot" aria-hidden="true"></span> Feria online · CABA</p>
+      <h1 id="hero-title">Feria de emprendedores <em>Raíces Fusión</em></h1>
+      <p class="lead">Un espacio para mostrar, vender y conectar. Conocé los emprendimientos y hablales directo por WhatsApp o Instagram.</p>
+      <div class="actions">
+        <a class="button button--primary" href="#feria">Ver los emprendimientos</a>
+        <a class="button button--ghost" href="#inscripcion">Inscribí tu emprendimiento</a>
+      </div>
+      <dl class="stats">
+        <div><dt>Emprendimientos</dt><dd data-stat="emprendimientos">9</dd></div>
+        <div><dt>Rubros</dt><dd data-stat="rubros">6</dd></div>
+        <div><dt>Comisión por venta</dt><dd>0%</dd></div>
+        <div><dt>Inscripción mensual</dt><dd data-stat="precio">$10.000</dd></div>
+      </dl>
+    </section>
+
+    <section id="feria" class="section" aria-labelledby="feria-title">
+      <div class="section-head">
+        <h2 id="feria-title">Todos los <em>emprendimientos</em></h2>
+        <p>Elegí un rubro para filtrar. Cada emprendedor vende por su cuenta: escribile directo.</p>
+      </div>
+
+      <search>
+        <div class="filters" role="group" aria-label="Filtrar por rubro" id="filtros"></div>
+      </search>
+      <p id="estado-filtro" class="visually-hidden" role="status"></p>
+
+      <ul class="grid" id="stands" role="list"></ul>
+      <noscript><p class="note">Activá JavaScript para ver los emprendimientos.</p></noscript>
+    </section>
+
+    <section id="como-funciona" class="section section--alt" aria-labelledby="como-title">
+      <div class="section-head">
+        <h2 id="como-title">¿Cómo <em>funciona</em>?</h2>
+        <p>Sumarte a la feria es simple y las ventas son 100% tuyas.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Completás el formulario</h3>
+          <p>Nos contás de tu emprendimiento y nos llega tu mensaje al instante.</p>
+        </li>
+        <li>
+          <h3>Abonás la inscripción</h3>
+          <p><span data-stat="precio">$10.000</span> por mes. Coordinamos el pago por mensaje.</p>
+        </li>
+        <li>
+          <h3>Tu stand queda online</h3>
+          <p>Con tu logo, descripción, rubro y botones a tu WhatsApp e Instagram.</p>
+        </li>
+        <li>
+          <h3>Los clientes te escriben</h3>
+          <p>Te contactan directo y vos coordinás la venta, sin intermediarios.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="inscripcion" class="section" aria-labelledby="inscripcion-title">
+      <div class="section-head">
+        <h2 id="inscripcion-title">Inscribí tu <em>emprendimiento</em></h2>
+        <p>Sumate a la próxima edición de la feria online.</p>
+      </div>
+
+      <div class="signup">
+        <article class="price-card" aria-labelledby="precio-title">
+          <h3 id="precio-title">Stand en la feria</h3>
+          <p class="price"><strong data-stat="precio">$10.000</strong> <span data-stat="periodo">por mes</span></p>
+          <ul class="checklist">
+            <li>Stand virtual con tu logo, descripción y rubro</li>
+            <li>Botones directos a tu WhatsApp e Instagram</li>
+            <li>Aparecés en el filtro de tu rubro</li>
+            <li>Difusión en el Instagram de @raicesfusion</li>
+            <li>0% de comisión: las ventas son 100% tuyas</li>
+            <li>Sin permanencia: renovás mes a mes</li>
+          </ul>
+        </article>
+
+        <form id="form-inscripcion" class="form" aria-labelledby="inscripcion-title" novalidate>
+          <div class="field">
+            <label for="f-nombre">Tu nombre <span aria-hidden="true">*</span></label>
+            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required enterkeyhint="next">
+          </div>
+          <div class="field">
+            <label for="f-emprendimiento">Nombre del emprendimiento <span aria-hidden="true">*</span></label>
+            <input id="f-emprendimiento" name="emprendimiento" type="text" autocomplete="organization" required enterkeyhint="next">
+          </div>
+          <div class="field">
+            <label for="f-rubro">Rubro <span aria-hidden="true">*</span></label>
+            <select id="f-rubro" name="rubro" required>
+              <option value="">Elegí un rubro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-whatsapp">Tu WhatsApp <span aria-hidden="true">*</span></label>
+            <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="f-whatsapp-ayuda" enterkeyhint="next">
+            <span id="f-whatsapp-ayuda" class="hint">Con código de área, por ejemplo 11 1234 5678.</span>
+          </div>
+          <div class="field">
+            <label for="f-instagram">Instagram (opcional)</label>
+            <input id="f-instagram" name="instagram" type="text" autocorrect="off" autocapitalize="none" spellcheck="false" aria-describedby="f-instagram-ayuda" enterkeyhint="next">
+            <span id="f-instagram-ayuda" class="hint">Tu usuario, por ejemplo @miemprendimiento.</span>
+          </div>
+          <div class="field">
+            <label for="f-descripcion">¿Qué vendés? <span aria-hidden="true">*</span></label>
+            <textarea id="f-descripcion" name="descripcion" rows="3" maxlength="300" required></textarea>
+          </div>
+          <p class="hint">Los campos con * son obligatorios.</p>
+          <button class="button button--primary button--block" type="submit">Enviar inscripción</button>
+          <p id="form-estado" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="preguntas" class="section section--alt" aria-labelledby="preguntas-title">
+      <div class="section-head">
+        <h2 id="preguntas-title">Preguntas <em>frecuentes</em></h2>
+      </div>
+      <div class="accordion">
+        <details>
+          <summary>¿Cuánto cuesta participar?</summary>
+          <p>La inscripción cuesta <span data-stat="precio">$10.000</span> por mes. No cobramos comisión por tus ventas.</p>
+        </details>
+        <details>
+          <summary>¿Cómo me compran los clientes?</summary>
+          <p>Desde tu stand, los clientes te escriben directo por WhatsApp o Instagram. La venta, el pago y la entrega los coordinás vos.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tiempo queda publicado mi stand?</summary>
+          <p>Mientras tengas la inscripción al día. Se renueva mes a mes y podés darte de baja cuando quieras.</p>
+        </details>
+        <details>
+          <summary>¿Qué rubros pueden participar?</summary>
+          <p>Todo tipo de emprendimientos: belleza, moda, hogar, arte, regalos, gastronomía y más. Si tu rubro no aparece, elegí «Otro».</p>
+        </details>
+        <details>
+          <summary>¿Cómo se confirma mi lugar?</summary>
+          <p>Cuando recibimos tu inscripción te respondemos para coordinar el pago. Una vez abonado, publicamos tu stand.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="img/raices-fusion.webp" alt="" width="56" height="53" loading="lazy">
+    <p><strong>Raíces Fusión</strong> · Feria de emprendedores · CABA</p>
+    <p><a href="https://www.instagram.com/raicesfusion/" rel="noopener" target="_blank">Seguinos en Instagram @raicesfusion</a></p>
+  </footer>
+</body>
+</html>
