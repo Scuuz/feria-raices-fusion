@@ -36,7 +36,7 @@ const EMPRENDIMIENTOS = [
       "Wax melts con identidad e investigación histórica. Envíos a todo el país.",
     imagen: "img/aromas-con-historia.webp",
     instagram: "aromasconnhistoria",
-    whatsapp: "",
+    whatsapp: "5491131219616",
   },
   {
     nombre: "Ana Millanel",
@@ -45,7 +45,7 @@ const EMPRENDIMIENTOS = [
       "Cosmética y perfumería por catálogo de Millanel. Parque Patricios, CABA.",
     imagen: "img/ana-millanel.webp",
     instagram: "anamillanel",
-    whatsapp: "",
+    whatsapp: "5491122978189",
   },
   {
     nombre: "La Suu Tupper",
@@ -53,7 +53,7 @@ const EMPRENDIMIENTOS = [
     descripcion: "Outlet de Tupper en zona CABA, con envíos sin cargo.",
     imagen: "img/la-suu-tupper.webp",
     instagram: "lasuutupper",
-    whatsapp: "",
+    whatsapp: "5491155174785",
   },
   {
     nombre: "Titania ReMade",
@@ -62,7 +62,7 @@ const EMPRENDIMIENTOS = [
       "Carteras únicas hechas con jeans reciclados. Cada diseño nace de material reciclado y mucha creatividad.",
     imagen: "img/titania-remade.webp",
     instagram: "titaniaremade",
-    whatsapp: "",
+    whatsapp: "5491128616767",
   },
   {
     nombre: "Nativo Copas",
@@ -72,7 +72,7 @@ const EMPRENDIMIENTOS = [
     imagen: "img/nativo-copas.webp",
     aviso: "Venta solo a mayores de 18 años.",
     instagram: "nativo_copas",
-    whatsapp: "",
+    whatsapp: "5491161044777",
   },
   {
     nombre: "Taller Mis Ángeles",
@@ -81,7 +81,7 @@ const EMPRENDIMIENTOS = [
       "Arte mix media y porcelana fría. Trabajos personalizados, decoración para el hogar y artículos para eventos.",
     imagen: "img/mis-angeles.webp",
     instagram: "misangeles.61",
-    whatsapp: "",
+    whatsapp: "5491158130375",
   },
   {
     nombre: "ivonr2021 Regalos",
